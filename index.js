@@ -1,5 +1,7 @@
-const express = require("express");
+import express from "express"
 const app = express();
+//aqui temos que avisar para o express que vamos usar o formato json. sem esse aviso não conseguimos testa requisiçoes do tipo body params.
+app.use(express.json());
 const port = 3000;
 
 
@@ -9,7 +11,7 @@ const port = 3000;
 // para isso e preciso que nos escripts do pakage.json estaja como dev para que possamos ativar o nodemon.
 // o comando para ativar o nodemon e => npm run dev 
 app.listen(port, () =>{
-    console.log("servidor ativo ⟳ ✅")
+    console.log("servidor ativo e rodando ⟳ ✅");
 })
 
 // para que haja comunicação temos que criar a rota, e o navegador sempre usa uma rota do tipo GET.
